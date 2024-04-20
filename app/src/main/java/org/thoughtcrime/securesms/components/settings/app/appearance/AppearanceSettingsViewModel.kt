@@ -28,6 +28,11 @@ class AppearanceSettingsViewModel : ViewModel() {
     SplashScreenUtil.setSplashScreenThemeIfNecessary(activity, theme)
   }
 
+  fun updateDarkBackgrounds() {
+    store.update { it.copy(darkBackgrounds = !store.state.darkBackgrounds) }
+    SignalStore.settings.darkBackgroundsEnabled = !store.state.darkBackgrounds
+  }
+
   fun setLanguage(language: String) {
     store.update { it.copy(language = language) }
     SignalStore.settings.language = language
@@ -42,6 +47,7 @@ class AppearanceSettingsViewModel : ViewModel() {
   private fun getState(): AppearanceSettingsState {
     return AppearanceSettingsState(
       SignalStore.settings.theme,
+      SignalStore.settings().darkBackgroundsEnabled,
       SignalStore.settings.messageFontSize,
       SignalStore.settings.language,
       SignalStore.settings.useCompactNavigationBar

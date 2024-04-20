@@ -3397,6 +3397,7 @@
     <string name="preferences__dark_theme">Dark</string>
     <string name="preferences__appearance">Appearance</string>
     <string name="preferences__theme">Theme</string>
+    <string name="preferences__blackBackground">Black backgrounds</string>
     <string name="preferences__chat_color_and_wallpaper">Chat color &amp; wallpaper</string>
     <!-- Clickable settings text allowing the user to change the icon visible on their phone\'s home screen. -->
     <string name="preferences__app_icon">App Icon</string>

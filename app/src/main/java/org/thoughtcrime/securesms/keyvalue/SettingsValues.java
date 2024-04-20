@@ -40,6 +40,7 @@ public final class SettingsValues extends SignalStoreValues {
   public static final String THREAD_TRIM_ENABLED = "pref_trim_threads";
 
   public static final  String THEME                                   = "settings.theme";
+  public static final  String DARK_BACKGROUNDS                        = "settings.dark.backgrounds";
   public static final  String MESSAGE_FONT_SIZE                       = "settings.message.font.size";
   public static final  String LANGUAGE                                = "settings.language";
   public static final  String PREFER_SYSTEM_EMOJI                     = "settings.use.system.emoji";
@@ -212,6 +213,14 @@ public final class SettingsValues extends SignalStoreValues {
   public void setTheme(@NonNull Theme theme) {
     putString(THEME, theme.serialize());
     onConfigurationSettingChanged.postValue(THEME);
+  }
+
+  public @NonNull Boolean getDarkBackgroundsEnabled() {
+    return getBoolean(DARK_BACKGROUNDS, false);
+  }
+
+  public void setDarkBackgroundsEnabled(boolean enabled) {
+    putBoolean(DARK_BACKGROUNDS, enabled);
   }
 
   public int getMessageFontSize() {
@@ -499,7 +508,10 @@ public final class SettingsValues extends SignalStoreValues {
   }
 
   public enum Theme {
-    SYSTEM("system"), LIGHT("light"), DARK("dark");
+    SYSTEM("system"),
+    LIGHT("light"),
+    DARK("dark"),
+    MATERIAL_YOU("materialYou");
 
     private final String value;
 
@@ -512,16 +524,13 @@ public final class SettingsValues extends SignalStoreValues {
     }
 
     public static @NonNull Theme deserialize(@NonNull String value) {
-      switch (value) {
-        case "system":
-          return SYSTEM;
-        case "light":
-          return LIGHT;
-        case "dark":
-          return DARK;
-        default:
-          throw new IllegalArgumentException("Unrecognized value " + value);
-      }
+      return switch (value) {
+        case "materialYou" -> MATERIAL_YOU;
+        case "system" -> SYSTEM;
+        case "light" -> LIGHT;
+        case "dark" -> DARK;
+        default -> throw new IllegalArgumentException("Unrecognized value " + value);
+      };
     }
   }
 }

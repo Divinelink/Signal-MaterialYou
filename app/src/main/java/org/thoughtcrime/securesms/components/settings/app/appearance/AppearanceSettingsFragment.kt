@@ -61,6 +61,13 @@ class AppearanceSettingsFragment : DSLSettingsFragment(R.string.preferences__app
         }
       )
 
+      switchPref(
+        title = DSLSettingsText.from(R.string.preferences__blackBackground),
+        summary = DSLSettingsText.from("When using dark mode, apply black backgrounds."),
+        isChecked = state.darkBackgrounds,
+        onClick = viewModel::updateDarkBackgrounds
+      )
+
       clickPref(
         title = DSLSettingsText.from(R.string.preferences__chat_color_and_wallpaper),
         onClick = {
