@@ -5,9 +5,9 @@
     <color name="signal_colorPrimaryContainer">@color/signal_dark_colorPrimaryContainer</color>
     <color name="signal_colorSecondary">@color/signal_dark_colorSecondary</color>
     <color name="signal_colorSecondaryContainer">@color/signal_dark_colorSecondaryContainer</color>
-    <color name="signal_colorSurface">@color/signal_dark_colorSurface</color>
+    <color name="signal_colorSurface">@android:color/black</color>-->
     <color name="signal_colorSurfaceVariant">@color/signal_dark_colorSurfaceVariant</color>
-    <color name="signal_colorBackground">@color/signal_dark_colorBackground</color>
+    <color name="signal_colorBackground">@android:color/black</color>-->
     <color name="signal_colorError">@color/signal_dark_colorError</color>
     <color name="signal_colorErrorContainer">@color/signal_dark_colorErrorContainer</color>
     <color name="signal_colorOnPrimary">@color/signal_dark_colorOnPrimary</color>

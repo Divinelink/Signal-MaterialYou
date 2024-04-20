@@ -168,6 +168,26 @@ private val darkColorScheme = darkColorScheme(
   outline = Color(0xFF5C5E65)
 )
 
+private val darkBackgroundsColorScheme = darkColorScheme(
+  primary = Color(0xFFB6C5FA),
+  primaryContainer = Color(0xFF464B5C),
+  secondary = Color(0xFFC1C6DD),
+  secondaryContainer = Color(0xFF414659),
+  surface = Color(0xFF000000),
+  surfaceVariant = Color(0xFF303133),
+  background = Color(0xFF000000),
+  error = Color(0xFFFFB4A9),
+  errorContainer = Color(0xFF930006),
+  onPrimary = Color(0xFF1E2438),
+  onPrimaryContainer = Color(0xFFDBE1FC),
+  onSecondary = Color(0xFF2A3042),
+  onSecondaryContainer = Color(0xFFDCE1F9),
+  onSurface = Color(0xFFE2E1E5),
+  onSurfaceVariant = Color(0xFFBEBFC5),
+  onBackground = Color(0xFFE2E1E5),
+  outline = Color(0xFF5C5E65)
+)
+
 private val lightSnackbarColors = SnackbarColors(
   color = darkColorScheme.surface,
   contentColor = darkColorScheme.onSurface,
@@ -194,7 +214,7 @@ fun SignalTheme(
 
   CompositionLocalProvider(LocalExtendedColors provides extendedColors, LocalSnackbarColors provides snackbarColors) {
     MaterialTheme(
-      colorScheme = if (isDarkMode) darkColorScheme else lightColorScheme,
+      colorScheme = if (isDarkMode) darkBackgroundsColorScheme else lightColorScheme,
       typography = typography,
       content = content
     )

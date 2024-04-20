@@ -47,7 +47,7 @@ class AppearanceSettingsViewModel : ViewModel() {
   private fun getState(): AppearanceSettingsState {
     return AppearanceSettingsState(
       SignalStore.settings.theme,
-      SignalStore.settings().darkBackgroundsEnabled,
+      SignalStore.settings.darkBackgroundsEnabled,
       SignalStore.settings.messageFontSize,
       SignalStore.settings.language,
       SignalStore.settings.useCompactNavigationBar
